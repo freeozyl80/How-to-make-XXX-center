@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>垂直居中</title>
+    <style>
+    	.area {
+    		height: 100px;
+    		border: 1px solid gray;
+    	}
+		.table {
+			display: table;
+   			background: hsl(120, 100%, 97%);
+    		width: 100%;
+    		height: 100px;
+		}
+
+		.table-center {
+		    display: table-cell;
+		    text-align: center;
+		    vertical-align: middle;
+		}
+		.table-center img {
+			width: 50px;
+			height: auto;
+		}
+		/* 分隔符 */
+		.absolute {
+			position: relative;
+		    min-height: 100px;
+		    background: hsl(200, 100%, 97%);
+		}
+		.absolute img{
+			width: 50px;
+		    height: auto;
+		    overflow: auto;
+		    margin: auto;
+		    position: absolute;
+		    top: 0; left: 0;
+		    bottom: 0; right: 0;
+		}
+		/* 分隔符 */
+		.translate {
+		    background: hsl(180, 100%, 97%);
+		    position: relative;
+		    min-height: 100px;
+		}
+		.translate img {
+		    position: absolute;
+		    top: 50%; left: 50%;
+		    transform: translate(-50%, -50%);
+		    width: 50px;
+		    height: auto;
+		}
+		.translate div {
+		    position: absolute;
+		    top: 50%; left: 50%;
+		    transform: translate(-50%, -50%);
+		    height: auto;
+		}
+
+		/* 分隔符 */
+		.flexbox {
+			background: hsl(240, 100%, 97%);
+			display: flex;
+    		justify-content: center;
+    		align-items: center;
+		    min-height: 100px;
+		}
+		.flexbox img {
+			width: 50px;
+		    height: auto;
+		}
+		/* cut */
+
+		.calc {
+			background: hsl(300, 100%, 97%);
+    		min-height: 100px;
+    		position: relative;
+		}
+		.calc img {
+		    width: 50px;
+		    height: auto;
+		    position: absolute;
+		    top: calc(50% - 25px);
+		    left: calc(50% - 25px);
+		}
+		/* cut */
+		.lineheight {
+			background: hsl(340, 100%, 97%);
+			width: 100%;
+			display: inline-block;
+			vertical-align: middle;
+			line-height: 100px;
+			min-height: 100px;
+			text-align: center;
+		}
+		.lineheight img {
+			display: inline-block;
+			vertical-align: middle;
+		    width: 50px;
+		}
+		.lineheight div {
+			vertical-align: middle;
+		}
+    </style>
+</head>
+<body>
+	<!-- table方式 -->
+	<div class="area">
+		<div class="table">
+			<div class="table-center">
+				<img src="./img/author.png"/>
+				<div style="display:inline-block">Test this word</div>
+			</div>
+		</div>
+	</div>
+	<!-- absolute -->
+	<div class="area">
+		<div class="absolute">
+			<img src="./img/author.png"/>
+			<div style="display:inline-block">Test this word</div>
+		</div>
+	</div>
+	<!-- translate方式 -->
+	<div class="area">
+		<div class="translate">
+			<img src="./img/author.png"/>
+			<div style="display:inline-block">Test this word</div>
+		</div>
+	</div>
+	<!-- flexbox居中方式 -->
+	<div class="area">
+		<div class="flexbox">
+			<img src="./img/author.png"/>
+			<div style="display:inline-block">Test this word</div>
+		</div>
+	</div>
+	<!-- calc居中 -->
+	<div class="area">
+		<div class="calc">
+			<img src="./img/author.png"/>
+			<div style="display:inline-block">Test this word</div>
+		</div>
+	</div>
+	<!-- lineheight居中 -->
+	<div class="area">
+		<div class="lineheight">
+			<img src="./img/author.png"/>
+			<div style="display:inline-block">Test this word</div>
+		</div>
+	</div>
+ </div>
+</body>
+</html>
